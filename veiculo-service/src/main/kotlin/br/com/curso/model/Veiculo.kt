@@ -10,7 +10,7 @@ data class Veiculo(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
-    val model: String,
+    val modelo: String,
     val marca: String,
     val placa: String
 )
