@@ -4,7 +4,7 @@ import java.math.BigDecimal
 
 data class VendaInput(
     val cliente: String,
-    val veiculo: Int,
-    val valo: BigDecimal,
+    val veiculo: Long,
+    val valor: BigDecimal,
     val quantidadeParcelas: Int
 )
