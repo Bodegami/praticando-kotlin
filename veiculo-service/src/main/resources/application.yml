@@ -3,15 +3,25 @@ micronaut:
     name: veiculoService
 datasources:
   default:
+    url: jdbc:postgresql://127.0.0.1:5432/dbveiculo
     driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: '123456'
+    schema-generate: CREATE_DROP
     db-type: postgres
     dialect: POSTGRES
+
 jpa:
   default:
+    package-to-scan:
+      - 'br.com.curso.model'
     properties:
       hibernate:
         hbm2ddl:
           auto: update
+        show_sql: true
+        format_sql: true
+
 netty:
   default:
     allocator:
