@@ -14,5 +14,6 @@ class VendaConsumer(
     @Topic("ms-vendas")
     fun receberVenda(id: String, vendaJSON: String) {
         val venda = objectMapper.readValue(vendaJSON, Venda::class.java)
+        println(venda)
     }
 }
