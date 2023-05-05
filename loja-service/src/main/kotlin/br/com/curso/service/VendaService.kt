@@ -10,11 +10,11 @@ import java.time.LocalDate
 
 @Singleton
 class VendaService(
-    private val veiculoHttp: VeiculoHttp
+    private val veiculoService: VeiculoService
 ) {
 
     fun realizarVenda(vendaInput: VendaInput) {
-        val veiculo = veiculoHttp.findById(vendaInput.veiculo)
+        val veiculo = veiculoService.getVeiculo(vendaInput.veiculo)
         val parcelas: List<Parcela> = this.getQuantidadeTotalParcelas(vendaInput)
 
         val venda = Venda(
