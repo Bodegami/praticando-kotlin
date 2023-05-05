@@ -14,7 +14,7 @@ class VeiculoHttpFallback(
 
     override fun findById(id: Long): Veiculo {
         val redisPool = JedisPool(JedisPoolConfig(), "127.0.0.1", 6379)
-        var jedis = redisPool.resource
+        val jedis = redisPool.resource
         val veiculoJSON = jedis.get(id.toString())
         return objectMapper.readValue(veiculoJSON, Veiculo::class.java)
     }

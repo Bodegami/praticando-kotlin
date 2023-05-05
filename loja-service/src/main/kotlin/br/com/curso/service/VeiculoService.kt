@@ -15,13 +15,15 @@ class VeiculoService(
 ) {
 
     fun getVeiculo(id: Long): Veiculo {
-        return veiculoHttp.findById(id)
+        val veiculo = veiculoHttp.findById(id)
+        gravarCache(veiculo)
+        return veiculo
     }
 
     fun gravarCache(veiculo: Veiculo) {
         val redisPool = JedisPool(JedisPoolConfig(), "127.0.0.1", 6379)
-        var jedis = redisPool.resource
-        var veiculoJSON = objectMapper.writeValueAsString(veiculo)
+        val jedis = redisPool.resource
+        val veiculoJSON = objectMapper.writeValueAsString(veiculo)
         jedis.set(veiculo.id.toString(), veiculoJSON)
     }
 
