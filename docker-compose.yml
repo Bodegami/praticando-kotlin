@@ -15,8 +15,8 @@ services:
       
   redis:
     image: redis:latest
-    hostname: veiculo-redis
-    container_name: redis
+    hostname: venda-redis
+    container_name: venda-redis
     restart: always
     ports:
       - 6379:6379
@@ -64,6 +64,15 @@ services:
       - 9000:9000
     environment:
       KAFKA_BROKERCONNECT: broker:29092      
+      
+  mongo:
+    image: mongo
+    hostname: relatorio-mongo
+    container_name: relatorio-mongo     
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
       
 volumes:
   cache:
