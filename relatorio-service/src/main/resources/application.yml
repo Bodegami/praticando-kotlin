@@ -14,4 +14,4 @@ kafka:
     servers: localhost:9092
 
 mongodb:
-  uri: 'mongodb://localhost:27017/vendas'
+  uri: 'mongodb://root:example@localhost:27017/admin?authSource=admin'
