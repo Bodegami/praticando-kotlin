@@ -8,6 +8,7 @@ import br.com.curso.producer.VendaProducer
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.inject.Singleton
 import java.math.BigDecimal
+import java.math.RoundingMode
 import java.time.LocalDate
 import java.util.*
 import kotlin.collections.ArrayList
@@ -36,7 +37,7 @@ class VendaService(
     }
 
     private fun getValorParcela(vendaInput: VendaInput): BigDecimal {
-        return vendaInput.valor.divide(vendaInput.quantidadeParcelas.toBigDecimal())
+        return vendaInput.valor.divide(vendaInput.quantidadeParcelas.toBigDecimal(),2, RoundingMode.HALF_UP)
     }
 
     private fun getQuantidadeTotalParcelas(vendaInput: VendaInput): List<Parcela> {

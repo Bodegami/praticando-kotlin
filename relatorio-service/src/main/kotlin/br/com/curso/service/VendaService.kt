@@ -13,4 +13,8 @@ class VendaService(
         vendaRepository.create(venda)
     }
 
+    fun getAll(): List<Venda> {
+        return vendaRepository.getAll()
+    }
+
 }
