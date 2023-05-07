@@ -21,7 +21,7 @@ class VeiculoService(
     }
 
     fun gravarCache(veiculo: Veiculo) {
-        val redisPool = JedisPool(JedisPoolConfig(), "127.0.0.1", 6379)
+        val redisPool = JedisPool(JedisPoolConfig(), "venda-redis", 6379)
         val jedis = redisPool.resource
         val veiculoJSON = objectMapper.writeValueAsString(veiculo)
         jedis.set(veiculo.id.toString(), veiculoJSON)

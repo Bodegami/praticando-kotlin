@@ -11,10 +11,10 @@ netty:
 
 kafka:
   bootstrap:
-    servers: localhost:9092
+    servers: broker:9092
 
 consul:
   client:
     registration:
       enabled: true
-    defaultZone: "localhost:8500"
+    defaultZone: "consul:8500"
