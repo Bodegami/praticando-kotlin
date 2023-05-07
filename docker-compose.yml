@@ -1,4 +1,7 @@
 # Use postgres/example user/password credentials
+
+# executar no raiz do projeto: docker-compose up -d --build
+
 version: '3.1'
 
 services:
@@ -112,7 +115,16 @@ services:
     networks:
       - micronaut-net    
     ports:
-      - 9090:9090    
+      - 9090:9090
+      
+  veiculo-service:
+    build:
+      context: veiculo-service
+      dockerfile: Dockerfile
+    container_name: veiculo-service
+    tty: true
+    networks:
+      - micronaut-net          
       
 volumes:
   cache:

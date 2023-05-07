@@ -6,7 +6,7 @@ micronaut:
 
 datasources:
   default:
-    url: jdbc:postgresql://127.0.0.1:5432/dbveiculo
+    url: jdbc:postgresql://veiculo-postgres:5432/dbveiculo
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: '123456'
@@ -34,4 +34,4 @@ consul:
   client:
     registration:
       enabled: true
-    defaultZone: "localhost:8500"
+    defaultZone: "consul:8500"
