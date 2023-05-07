@@ -6,10 +6,10 @@ import io.micronaut.http.annotation.PathVariable
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.retry.annotation.CircuitBreaker
 
-@Client(id = "http://localhost:8080/veiculos")
+@Client(id = "veiculo-service")
 @CircuitBreaker
 interface VeiculoHttp {
 
-    @Get("/{id}")
+    @Get("/veiculos/{id}")
     fun findById(@PathVariable id: Long): Veiculo
 }

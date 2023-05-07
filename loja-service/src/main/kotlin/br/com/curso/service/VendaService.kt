@@ -3,7 +3,6 @@ package br.com.curso.service
 import br.com.curso.dto.input.VendaInput
 import br.com.curso.dto.output.Parcela
 import br.com.curso.dto.output.Venda
-import br.com.curso.http.VeiculoHttp
 import br.com.curso.producer.VendaProducer
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.inject.Singleton

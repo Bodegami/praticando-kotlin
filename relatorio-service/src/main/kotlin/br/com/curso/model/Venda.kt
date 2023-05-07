@@ -1,7 +1,6 @@
 package br.com.curso.model
 
 import java.math.BigDecimal
-import javax.validation.constraints.Null
 
 data class Venda(
     var cliente: String,
