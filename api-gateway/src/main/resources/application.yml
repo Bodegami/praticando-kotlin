@@ -2,7 +2,7 @@ micronaut:
   application:
     name: apiGateway
   server:
-    port: 9999
+    port: 9090
   config-client:
     enabled: true
 
@@ -10,7 +10,7 @@ consul:
   client:
     registration:
       enabled: true
-    defaultZone: "localhost:8500"
+    defaultZone: "consul:8500"
 
 gateway:
   services:

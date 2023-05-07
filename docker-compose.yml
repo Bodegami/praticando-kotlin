@@ -102,6 +102,18 @@ services:
       - '8600:8600'
       - '8600:8600/udp'
       
+      
+  api-gateway:
+    build:
+      context: api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    tty: true
+    networks:
+      - micronaut-net    
+    ports:
+      - 9090:9090    
+      
 volumes:
   cache:
     driver: local
