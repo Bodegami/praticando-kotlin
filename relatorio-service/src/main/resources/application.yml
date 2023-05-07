@@ -2,7 +2,7 @@ micronaut:
   application:
     name: relatorioService
   server:
-    port: 8082
+    port: -1 #-1 para subir porta aleatoria
 
 netty:
   default:
@@ -15,3 +15,9 @@ kafka:
 
 mongodb:
   uri: 'mongodb://root:example@localhost:27017/admin?authSource=admin'
+
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "localhost:8500"

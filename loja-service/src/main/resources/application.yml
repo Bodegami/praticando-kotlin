@@ -2,7 +2,7 @@ micronaut:
   application:
     name: lojaService
   server:
-    port: 8081
+    port: -1 #-1 para subir porta aleatoria
 
 netty:
   default:
