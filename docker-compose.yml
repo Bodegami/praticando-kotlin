@@ -134,6 +134,18 @@ services:
     tty: true
     networks:
       - micronaut-net 
+    
+  relatorio-service:
+    build:
+      context: relatorio-service
+      dockerfile: Dockerfile
+    container_name: relatorio-service
+    tty: true
+    depends_on:
+      - broker
+      - mongo
+    networks:
+      - micronaut-net 
       
 volumes:
   cache:

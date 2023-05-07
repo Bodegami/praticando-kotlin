@@ -11,13 +11,13 @@ netty:
 
 kafka:
   bootstrap:
-    servers: localhost:9092
+    servers: broker:9092
 
 mongodb:
-  uri: 'mongodb://root:example@localhost:27017/admin?authSource=admin'
+  uri: 'mongodb://root:example@relatorio-mongo:27017/admin?authSource=admin'
 
 consul:
   client:
     registration:
       enabled: true
-    defaultZone: "localhost:8500"
+    defaultZone: "consul:8500"
